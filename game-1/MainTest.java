@@ -14,17 +14,16 @@ public class MainTest {
 	static	BufferedImage image;
 
 	public static void main(String[] args) {
-		
 		DrawMainFrame app = new DrawMainFrame();
 
-		Filename = "Resource/background.png";
+		Filename = "src/background.png";
 		try
 	    {
 	            image = ImageIO.read(new File(Filename));
 	    }
 	    catch(Exception e)
 	    {
-	            javax.swing.JOptionPane.showMessageDialog(null, "è¼‰å…¥åœ–æª”éŒ¯èª¤: "+Filename);
+	            javax.swing.JOptionPane.showMessageDialog(null, "¸ü¤J¹ÏÀÉ¿ù»~: "+Filename);
 	            image=null;
 	    }
 		JScrollPane scrollPane = new JScrollPane(new JLabel(new ImageIcon("Resource/background.png")));
