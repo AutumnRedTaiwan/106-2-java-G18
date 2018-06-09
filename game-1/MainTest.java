@@ -17,17 +17,17 @@ public class MainTest {
 		
 		DrawMainFrame app = new DrawMainFrame();
 
-		Filename="background.png";
+		Filename = "Resource/background.png";
 		try
 	    {
-	            image=ImageIO.read(new File(Filename));
+	            image = ImageIO.read(new File(Filename));
 	    }
 	    catch(Exception e)
 	    {
 	            javax.swing.JOptionPane.showMessageDialog(null, "載入圖檔錯誤: "+Filename);
 	            image=null;
 	    }
-		JScrollPane scrollPane = new JScrollPane(new JLabel(new ImageIcon(image)));
+		JScrollPane scrollPane = new JScrollPane(new JLabel(new ImageIcon("Resource/background.png")));
 		
 		app.getContentPane().add(scrollPane);
 		app.pack();
