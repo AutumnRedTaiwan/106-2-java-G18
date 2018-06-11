@@ -23,7 +23,7 @@ public class MainTest {
 	    }
 	    catch(Exception e)
 	    {
-	            javax.swing.JOptionPane.showMessageDialog(null, "¸ü¤J¹ÏÀÉ¿ù»~: "+Filename);
+	            javax.swing.JOptionPane.showMessageDialog(null, "è¼‰å…¥åœ–æª”éŒ¯èª¤: "+Filename);
 	            image=null;
 	    }
 		JScrollPane scrollPane = new JScrollPane(new JLabel(new ImageIcon("Resource/background.png")));
