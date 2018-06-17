@@ -12,19 +12,13 @@ public class KeyEventDemo extends JFrame{
         	
         }
         
-        public KeyEventDemo(int start) throws InterruptedException{           
+        public KeyEventDemo(int start){           
 
         			add( keyboardPanel);
         			
         			int time = 0;
         			
-        			JButton b1 = new JButton("¶}©l");
-        		    b1.setForeground(Color.BLACK);
-        		    b1.setBackground(Color.WHITE);
-        		    b1.setBounds(0, 0, 20, 10);
-        		    add(b1);
-                    
-        		    Thread.sleep(1000);
+        			
         		    
                     keyboardPanel.setFocusable(true);
       	      
@@ -101,7 +95,7 @@ public class KeyEventDemo extends JFrame{
                     			 y=100;
                     			 y2=200;
                     			 
-                    			 JOptionPane.showMessageDialog(null, "A°l¨ìB¤F", "µ²§ô", JOptionPane.INFORMATION_MESSAGE );
+                    			 JOptionPane.showMessageDialog(null, "AÂ°lÂ¨Ã¬BÂ¤F", "ÂµÂ²Â§Ã´", JOptionPane.INFORMATION_MESSAGE );
                     			 
                     			 System.exit(0);
                     		 }
