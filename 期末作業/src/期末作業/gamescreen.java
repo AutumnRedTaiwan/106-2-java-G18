@@ -1,4 +1,4 @@
-package ´Á¥½§@·~;
+package æœŸæœ«ä½œæ¥­;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -26,6 +26,8 @@ public class gamescreen {
     static int aa,bb,cc,dd,ee;
     
 	static int batt1,batt2, gamet=0;
+	
+	static int startnum=0;
     
 	static int[] card = {aa,bb,cc,dd,ee};
 
@@ -37,11 +39,11 @@ public class gamescreen {
     }
     catch(Exception e)
     {
-            javax.swing.JOptionPane.showMessageDialog(null, "¸ü¤J¹ÏÀÉ¿ù»~: "+Filename);
+            javax.swing.JOptionPane.showMessageDialog(null, "è¼‰å…¥åœ–æª”éŒ¯èª¤: "+Filename);
             image=null;
     }
     /**
-     * «Ø¥ßµøµ¡
+     * å»ºç«‹è¦–çª—
      */
     jf = new JFrame("");
     
@@ -49,19 +51,19 @@ public class gamescreen {
     
     
     a = rand.nextInt()%10+1;
-    if(a<0)	a = 10 - a;
+    if(a<0)	a = 0 - a;
     else if(a==0) a += 1;
     b = rand.nextInt()%10+1;
-    if(b<0)	b = 10 - b;
+    if(b<0)	b = 0 - b;
     else if(b==0) b += 1;
     c = rand.nextInt()%10+1;
-    if(c<0)	c = 10 - c;
+    if(c<0)	c = 0 - c;
     else if(c==0) c += 1;
     d = rand.nextInt()%10+1;
-    if(d<0)	d = 10 - d;
+    if(d<0)	d = 0 - d;
     else if(d==0) d += 1;
     e = rand.nextInt()%10+1;
-    if(e<0)	e = 10 - e;
+    if(e<0)	e = 0 - e;
     else if(e==0) e += 1;
     
     aa = rand.nextInt()%10+2;
@@ -80,35 +82,35 @@ public class gamescreen {
     if(ee<0)	ee = 0 - ee;
     else if(ee==0) ee += 1;
     
-    JButton b1 = new JButton("¥dµP");
+    JButton b1 = new JButton("å¡ç‰Œ");
     b1.setForeground(Color.WHITE);
     b1.setBackground(Color.BLACK);
     b1.setBounds(74, 67, 60, 85);
     jf.add(b1);
     b1.setEnabled(false);
     
-    JButton b2 = new JButton("¥dµP");
+    JButton b2 = new JButton("å¡ç‰Œ");
     b2.setForeground(Color.WHITE);
     b2.setBackground(Color.BLACK);
     b2.setBounds(164, 67, 60, 85);
     jf.add(b2);
     b2.setEnabled(false);
     
-    JButton b3 = new JButton("¥dµP");
+    JButton b3 = new JButton("å¡ç‰Œ");
     b3.setForeground(Color.WHITE);
     b3.setBackground(Color.BLACK);
     b3.setBounds(254, 67, 60, 85);
     jf.add(b3);
     b3.setEnabled(false);
     
-    JButton b4 = new JButton("¥dµP");
+    JButton b4 = new JButton("å¡ç‰Œ");
     b4.setForeground(Color.WHITE);
     b4.setBackground(Color.BLACK);
     b4.setBounds(344, 67, 60, 85);
     jf.add(b4);
     b4.setEnabled(false);
     
-    JButton b5 = new JButton("¥dµP");
+    JButton b5 = new JButton("å¡ç‰Œ");
     b5.setForeground(Color.WHITE);
     b5.setBackground(Color.BLACK);
     b5.setBounds(434, 67, 60, 85);
@@ -118,15 +120,16 @@ public class gamescreen {
     Score sc2 = new Score(n2);
     Score sc1 = new Score(n1);
     
-    JLabel player2=new JLabel("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+    JLabel player2=new JLabel("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
     player2.setBounds(524,67,150,40);
     jf.add(player2);
     
-    JButton b11 = new JButton("¯S®í");
+    JButton b11 = new JButton("ç‰¹æ®Š");
     b11.setForeground(Color.BLACK);
     b11.setBackground(Color.WHITE);
     b11.setBounds(704, 67, 60, 85);
     jf.add(b11);
+    b11.setEnabled(false);
   
     JButton b6 = new JButton(""+a);
     b6.setForeground(Color.WHITE);
@@ -158,41 +161,88 @@ public class gamescreen {
     b10.setBounds(669, 295, 60, 85);
     jf.add(b10);
     
-    JLabel player1=new JLabel("¥Í©R­È		"+sc1.getscore()+"/4000");
+    JLabel player1=new JLabel("ç”Ÿå‘½å€¼		"+sc1.getscore()+"/4000");
     player1.setBounds(129,295,150,40);
     jf.add(player1);
     
-    JButton b12 = new JButton("¯S®í");
+    JButton b12 = new JButton("ç‰¹æ®Š");
     b12.setForeground(Color.BLACK);
     b12.setBackground(Color.WHITE);
     b12.setBounds(37, 295, 60, 85);
     jf.add(b12);
     
-    JButton battle1 = new JButton("¨M");
+    JButton battle1 = new JButton("æ±º");
     battle1.setForeground(Color.BLACK);
     battle1.setBackground(Color.WHITE);
     battle1.setBounds(303, 180, 60, 85);
     jf.add(battle1);
     battle1.setEnabled(false);
     
-    JButton battle2 = new JButton("°«");
+    JButton battle2 = new JButton("é¬¥");
     battle2.setForeground(Color.BLACK);
     battle2.setBackground(Color.WHITE);
     battle2.setBounds(429, 180, 60, 85);
     jf.add(battle2);
     battle2.setEnabled(false);
     
+    b12.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e1) {
+        	int life;
+        	life = rand.nextInt()%3;
+        	if(life==0){
+        		sc1.lifescore();
+        		JOptionPane.showMessageDialog(jf,"å¢åŠ 400é»ç”Ÿå‘½å€¼");
+        		player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+        		b12.setEnabled(false);
+        	}else if(life==1){
+        		sc1.life2score();
+        		JOptionPane.showMessageDialog(jf,"æ¸›å°‘400é»ç”Ÿå‘½å€¼");
+        		player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+        		b12.setEnabled(false);
+        	}else if(life==2&&startnum==0){
+        		a = rand.nextInt()%10+1;
+        	    if(a<0)	a = 0 - a;
+        	    else if(a==0) a += 1;
+        	    b = rand.nextInt()%10+1;
+        	    if(b<0)	b = 0 - b;
+        	    else if(b==0) b += 1;
+        	    c = rand.nextInt()%10+1;
+        	    if(c<0)	c = 0 - c;
+        	    else if(c==0) c += 1;
+        	    d = rand.nextInt()%10+1;
+        	    if(d<0)	d = 0 - d;
+        	    else if(d==0) d += 1;
+        	    e = rand.nextInt()%10+1;
+        	    if(e<0)	e = 0 - e;
+        	    else if(e==0) e += 1;
+        	    
+        	    JOptionPane.showMessageDialog(jf,"ç©å®¶ç‰Œçµ„é‡ç™¼");
+        	    
+        	    b6.setText(""+a);
+        	    b7.setText(""+b);
+        	    b8.setText(""+c);
+        	    b9.setText(""+d);
+        	    b10.setText(""+e);
+        		
+        		b12.setEnabled(false);
+        	}
+        }
+    });
+    
     b6.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
         	gamet += 1;
+        	
+        	startnum += 1;
         	
         	MP3 mp3 = new MP3("Resource/katana1.mp3");
             mp3.play();
         	
         	battle1.setText(""+a);
         	batt1 = a;
-        	b6.setText("ªÅ");
+        	b6.setText("ç©º");
         	b6.setEnabled(false);
         	
         	int x=rand.nextInt()%5;
@@ -207,23 +257,23 @@ public class gamescreen {
         		if(x==0){
         			battle2.setText(""+aa);
         			batt2 = aa;
-        			b1.setText("ªÅ");
+        			b1.setText("ç©º");
         		}else if(x==1){
         			battle2.setText(""+bb);
         			batt2 = bb;
-        			b2.setText("ªÅ");
+        			b2.setText("ç©º");
         		}else if(x==2){
         			battle2.setText(""+cc);
         			batt2 = cc;
-        			b3.setText("ªÅ");
+        			b3.setText("ç©º");
         		}else if(x==3){
         			battle2.setText(""+dd);
         			batt2 = dd;
-        			b4.setText("ªÅ");
+        			b4.setText("ç©º");
         		}else if(x==4){
         			battle2.setText(""+ee);
         			batt2 = ee;
-        			b5.setText("ªÅ");
+        			b5.setText("ç©º");
         		}
         		card[x]=-1;
         	}
@@ -234,39 +284,39 @@ public class gamescreen {
             System.out.println("1."+aa+"2."+bb+"3."+cc+"4."+dd+"5."+ee+"0."+batt2);
             
             if(batt1 > batt2){
-            	JOptionPane.showMessageDialog(jf,"Player1Ä¹¤F¥[800ÂI¥Í©R­È,Player2¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player1è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player2æ‰£800é»ç”Ÿå‘½å€¼");
             	sc1.escore();
             	sc2.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else if(batt1 < batt2){
-            	JOptionPane.showMessageDialog(jf,"Player2Ä¹¤F¥[800ÂI¥Í©R­È,Player1¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player2è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player1æ‰£800é»ç”Ÿå‘½å€¼");
             	sc2.escore();
             	sc1.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else{
-            	JOptionPane.showMessageDialog(jf,"¥­¤â");
+            	JOptionPane.showMessageDialog(jf,"å¹³æ‰‹");
             }
             
             
-            battle1.setText("¨M");
-            battle2.setText("°«");
+            battle1.setText("æ±º");
+            battle2.setText("é¬¥");
         	
             if(sc1.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(sc2.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()>sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()<sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()==sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Âù¤è¥­¤â");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,é›™æ–¹å¹³æ‰‹");
         		System.exit(0);
         	}
         }
@@ -277,12 +327,14 @@ public class gamescreen {
         public void actionPerformed(ActionEvent e) {
         	gamet += 1;
         	
+        	startnum += 1;
+        	
         	MP3 mp3 = new MP3("Resource/katana1.mp3");
             mp3.play();
         	
         	battle1.setText(""+a);
         	batt1 = a;
-        	b7.setText("ªÅ");
+        	b7.setText("ç©º");
         	b7.setEnabled(false);
         	
         	int x2=rand.nextInt()%5;
@@ -297,23 +349,23 @@ public class gamescreen {
         		if(x2==0){
         			battle2.setText(""+aa);
         			batt2 = aa;
-        			b1.setText("ªÅ");
+        			b1.setText("ç©º");
         		}else if(x2==1){
         			battle2.setText(""+bb);
         			batt2 = bb;
-        			b2.setText("ªÅ");
+        			b2.setText("ç©º");
         		}else if(x2==2){
         			battle2.setText(""+cc);
         			batt2 = cc;
-        			b3.setText("ªÅ");
+        			b3.setText("ç©º");
         		}else if(x2==3){
         			battle2.setText(""+dd);
         			batt2 = dd;
-        			b4.setText("ªÅ");
+        			b4.setText("ç©º");
         		}else if(x2==4){
         			battle2.setText(""+ee);
         			batt2 = ee;
-        			b5.setText("ªÅ");
+        			b5.setText("ç©º");
         		}
         		card[x2]=-1;
         	}
@@ -324,39 +376,39 @@ public class gamescreen {
             System.out.println("1."+aa+"2."+bb+"3."+cc+"4."+dd+"5."+ee+"0."+batt2);
             
             if(batt1 > batt2){
-            	JOptionPane.showMessageDialog(jf,"Player1Ä¹¤F¥[800ÂI¥Í©R­È,Player2¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player1è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player2æ‰£800é»ç”Ÿå‘½å€¼");
             	sc1.escore();
             	sc2.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else if(batt1 < batt2){
-            	JOptionPane.showMessageDialog(jf,"Player2Ä¹¤F¥[800ÂI¥Í©R­È,Player1¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player2è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player1æ‰£800é»ç”Ÿå‘½å€¼");
             	sc2.escore();
             	sc1.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else{
-            	JOptionPane.showMessageDialog(jf,"¥­¤â");
+            	JOptionPane.showMessageDialog(jf,"å¹³æ‰‹");
             }
             
             
-            battle1.setText("¨M");
-            battle2.setText("°«");
+            battle1.setText("æ±º");
+            battle2.setText("é¬¥");
         	
             if(sc1.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(sc2.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()>sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()<sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()==sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Âù¤è¥­¤â");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,é›™æ–¹å¹³æ‰‹");
         		System.exit(0);
         	}
         }
@@ -368,12 +420,14 @@ public class gamescreen {
         public void actionPerformed(ActionEvent e) {
         	gamet += 1;
         	
+        	startnum += 1;
+        	
         	MP3 mp3 = new MP3("Resource/katana1.mp3");
             mp3.play();
         	
         	battle1.setText(""+a);
         	batt1 = a;
-        	b8.setText("ªÅ");
+        	b8.setText("ç©º");
         	b8.setEnabled(false);
         	
         	int x3=rand.nextInt()%5;
@@ -388,23 +442,23 @@ public class gamescreen {
         		if(x3==0){
         			battle2.setText(""+aa);
         			batt2 = aa;
-        			b1.setText("ªÅ");
+        			b1.setText("ç©º");
         		}else if(x3==1){
         			battle2.setText(""+bb);
         			batt2 = bb;
-        			b2.setText("ªÅ");
+        			b2.setText("ç©º");
         		}else if(x3==2){
         			battle2.setText(""+cc);
         			batt2 = cc;
-        			b3.setText("ªÅ");
+        			b3.setText("ç©º");
         		}else if(x3==3){
         			battle2.setText(""+dd);
         			batt2 = dd;
-        			b4.setText("ªÅ");
+        			b4.setText("ç©º");
         		}else if(x3==4){
         			battle2.setText(""+ee);
         			batt2 = ee;
-        			b5.setText("ªÅ");
+        			b5.setText("ç©º");
         		}
         		card[x3]=-1;
         	}
@@ -415,38 +469,38 @@ public class gamescreen {
             System.out.println("1."+aa+"2."+bb+"3."+cc+"4."+dd+"5."+ee+"0."+batt2);
             
             if(batt1 > batt2){
-            	JOptionPane.showMessageDialog(jf,"Player1Ä¹¤F¥[800ÂI¥Í©R­È,Player2¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player1è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player2æ‰£800é»ç”Ÿå‘½å€¼");
             	sc1.escore();
             	sc2.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else if(batt1 < batt2){
-            	JOptionPane.showMessageDialog(jf,"Player2Ä¹¤F¥[800ÂI¥Í©R­È,Player1¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player2è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player1æ‰£800é»ç”Ÿå‘½å€¼");
             	sc2.escore();
             	sc1.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else{
-            	JOptionPane.showMessageDialog(jf,"¥­¤â");
+            	JOptionPane.showMessageDialog(jf,"å¹³æ‰‹");
             }
             
-            battle1.setText("¨M");
-            battle2.setText("°«");
+            battle1.setText("æ±º");
+            battle2.setText("é¬¥");
         	
             if(sc1.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(sc2.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()>sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()<sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()==sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Âù¤è¥­¤â");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,é›™æ–¹å¹³æ‰‹");
         		System.exit(0);
         	}
         }
@@ -457,12 +511,14 @@ public class gamescreen {
         public void actionPerformed(ActionEvent e) {
         	gamet += 1;
         	
+        	startnum += 1;
+        	
         	MP3 mp3 = new MP3("Resource/katana1.mp3");
             mp3.play();
         	
         	battle1.setText(""+a);
         	batt1 = a;
-        	b9.setText("ªÅ");
+        	b9.setText("ç©º");
         	b9.setEnabled(false);
         	
         	int x4=rand.nextInt()%5;
@@ -477,23 +533,23 @@ public class gamescreen {
         		if(x4==0){
         			battle2.setText(""+aa);
         			batt2 = aa;
-        			b1.setText("ªÅ");
+        			b1.setText("ç©º");
         		}else if(x4==1){
         			battle2.setText(""+bb);
         			batt2 = bb;
-        			b2.setText("ªÅ");
+        			b2.setText("ç©º");
         		}else if(x4==2){
         			battle2.setText(""+cc);
         			batt2 = cc;
-        			b3.setText("ªÅ");
+        			b3.setText("ç©º");
         		}else if(x4==3){
         			battle2.setText(""+dd);
         			batt2 = dd;
-        			b4.setText("ªÅ");
+        			b4.setText("ç©º");
         		}else if(x4==4){
         			battle2.setText(""+ee);
         			batt2 = ee;
-        			b5.setText("ªÅ");
+        			b5.setText("ç©º");
         		}
         		card[x4]=-1;
         	}
@@ -504,38 +560,38 @@ public class gamescreen {
             System.out.println("1."+aa+"2."+bb+"3."+cc+"4."+dd+"5."+ee+"0."+batt2);
             
             if(batt1 > batt2){
-            	JOptionPane.showMessageDialog(jf,"Player1Ä¹¤F¥[800ÂI¥Í©R­È,Player2¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player1è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player2æ‰£800é»ç”Ÿå‘½å€¼");
             	sc1.escore();
             	sc2.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else if(batt1 < batt2){
-            	JOptionPane.showMessageDialog(jf,"Player2Ä¹¤F¥[800ÂI¥Í©R­È,Player1¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player2è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player1æ‰£800é»ç”Ÿå‘½å€¼");
             	sc2.escore();
             	sc1.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else{
-            	JOptionPane.showMessageDialog(jf,"¥­¤â");
+            	JOptionPane.showMessageDialog(jf,"å¹³æ‰‹");
             }
             
-            battle1.setText("¨M");
-            battle2.setText("°«");
+            battle1.setText("æ±º");
+            battle2.setText("é¬¥");
         	
             if(sc1.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(sc2.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()>sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()<sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()==sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Âù¤è¥­¤â");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,é›™æ–¹å¹³æ‰‹");
         		System.exit(0);
         	}
         }
@@ -546,12 +602,14 @@ public class gamescreen {
         public void actionPerformed(ActionEvent e) {
         	gamet += 1;
         	
+        	startnum += 1;
+        	
         	MP3 mp3 = new MP3("Resource/katana1.mp3");
             mp3.play();
         	
         	battle1.setText(""+a);
         	batt1 = a;
-        	b10.setText("ªÅ");
+        	b10.setText("ç©º");
         	b10.setEnabled(false);
         	
         	int x5=rand.nextInt()%5;
@@ -566,23 +624,23 @@ public class gamescreen {
         		if(x5==0){
         			battle2.setText(""+aa);
         			batt2 = aa;
-        			b1.setText("ªÅ");
+        			b1.setText("ç©º");
         		}else if(x5==1){
         			battle2.setText(""+bb);
         			batt2 = bb;
-        			b2.setText("ªÅ");
+        			b2.setText("ç©º");
         		}else if(x5==2){
         			battle2.setText(""+cc);
         			batt2 = cc;
-        			b3.setText("ªÅ");
+        			b3.setText("ç©º");
         		}else if(x5==3){
         			battle2.setText(""+dd);
         			batt2 = dd;
-        			b4.setText("ªÅ");
+        			b4.setText("ç©º");
         		}else if(x5==4){
         			battle2.setText(""+ee);
         			batt2 = ee;
-        			b5.setText("ªÅ");
+        			b5.setText("ç©º");
         		}
         		card[x5]=-1;
         	}
@@ -593,38 +651,38 @@ public class gamescreen {
             System.out.println("1."+aa+"2."+bb+"3."+cc+"4."+dd+"5."+ee+"0."+batt2);
             
             if(batt1 > batt2){
-            	JOptionPane.showMessageDialog(jf,"Player1Ä¹¤F¥[800ÂI¥Í©R­È,Player2¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player1è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player2æ‰£800é»ç”Ÿå‘½å€¼");
             	sc1.escore();
             	sc2.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else if(batt1 < batt2){
-            	JOptionPane.showMessageDialog(jf,"Player2Ä¹¤F¥[800ÂI¥Í©R­È,Player1¦©1000ÂI¥Í©R­È");
+            	JOptionPane.showMessageDialog(jf,"Player2è´äº†åŠ 800é»ç”Ÿå‘½å€¼,Player1æ‰£800é»ç”Ÿå‘½å€¼");
             	sc2.escore();
             	sc1.descore();
-            	player1.setText("¥Í©R­È		"+ sc1.getscore()+ "/4000");
-            	player2.setText("¥Í©R­È		"+ sc2.getscore()+ "/4000");
+            	player1.setText("ç”Ÿå‘½å€¼		"+ sc1.getscore()+ "/4000");
+            	player2.setText("ç”Ÿå‘½å€¼		"+ sc2.getscore()+ "/4000");
             }else{
-            	JOptionPane.showMessageDialog(jf,"¥­¤â");
+            	JOptionPane.showMessageDialog(jf,"å¹³æ‰‹");
             }
             
-            battle1.setText("¨M");
-            battle2.setText("°«");
+            battle1.setText("æ±º");
+            battle2.setText("é¬¥");
         	
         	if(sc1.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(sc2.getscore()<=0){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()>sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player1Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player1è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()<sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Player2Ä¹¤F");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,Player2è´äº†");
         		System.exit(0);
         	}else if(gamet == 5&&sc1.getscore()==sc2.getscore()){
-        		JOptionPane.showMessageDialog(jf,"¹CÀ¸µ²§ô,Âù¤è¥­¤â");
+        		JOptionPane.showMessageDialog(jf,"éŠæˆ²çµæŸ,é›™æ–¹å¹³æ‰‹");
         		System.exit(0);
         	}
         }
@@ -633,16 +691,16 @@ public class gamescreen {
     
     
     /**
-     * ³]©w­I´º
+     * è¨­å®šèƒŒæ™¯
      */
     JScrollPane scrollPane = new JScrollPane(new JLabel(new ImageIcon(image)));
     /**
-     * ³]©wµøµ¡¤j¤p
+     * è¨­å®šè¦–çª—å¤§å°
      */
     jf.getContentPane().add(scrollPane);
     jf.pack();
     jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    jf.setTitle("¹CÀ¸¶}©l");
+    jf.setTitle("éŠæˆ²é–‹å§‹");
     jf.setLocationRelativeTo(null);
     jf.setVisible(true);  
 }
