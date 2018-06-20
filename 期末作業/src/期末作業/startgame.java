@@ -1,4 +1,4 @@
-package ´Á¥½§@·~;
+package game;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -26,14 +26,14 @@ public class startgame {
     }
     catch(Exception e)
     {
-            javax.swing.JOptionPane.showMessageDialog(null, "¸ü¤J¹ÏÀÉ¿ù»~: "+Filename);
+            javax.swing.JOptionPane.showMessageDialog(null, "è¼‰å…¥åœ–æª”éŒ¯èª¤: "+Filename);
             image=null;
     }
     /**
-     * «Ø¥ßµøµ¡
+     * å»ºç«‹è¦–çª—
      */
     jf = new JFrame("");
-    JButton b1 = new JButton("¶}©l");
+    JButton b1 = new JButton("é–‹å§‹");
     b1.setForeground(Color.BLACK);
     b1.setBackground(Color.WHITE);
     b1.setBounds(275, 285, 60, 85);
@@ -45,7 +45,7 @@ public class startgame {
         	gs.screen();
         }
     });
-    JButton b2 = new JButton("³]©w");
+    JButton b2 = new JButton("è¨­å®š");
     b2.setForeground(Color.BLACK);
     b2.setBackground(Color.WHITE);
     b2.setBounds(365, 285, 60, 85);
@@ -57,7 +57,7 @@ public class startgame {
         	ss.screen();
         }
     });
-    JButton b3 = new JButton("µ²§ô");
+    JButton b3 = new JButton("çµæŸ");
     b3.setForeground(Color.BLACK);
     b3.setBackground(Color.WHITE);
     b3.setBounds(455, 285, 60, 85);
@@ -69,17 +69,17 @@ public class startgame {
         }
     });
     /**
-     * ³]©w­I´º
+     * è¨­å®šèƒŒæ™¯
      */
     JScrollPane scrollPane = new JScrollPane(new JLabel(new ImageIcon(image)));
     /**
-     * ³]©wµøµ¡¤j¤p
+     * è¨­å®šè¦–çª—å¤§å°
      */
     
     jf.getContentPane().add(scrollPane);
     jf.pack();
     jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    jf.setTitle("¥dµP¹CÀ¸");
+    jf.setTitle("å¡ç‰ŒéŠæˆ²");
     jf.setLocationRelativeTo(null);
     jf.setVisible(true);  
     
