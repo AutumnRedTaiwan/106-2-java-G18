@@ -1,4 +1,4 @@
-package 期末作業;
+package game;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
