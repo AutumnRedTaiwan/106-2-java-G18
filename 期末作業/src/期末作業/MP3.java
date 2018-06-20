@@ -1,4 +1,4 @@
-package ´Á¥½§@·~;
+package game;
 
 /*************************************************************************
  *  Compilation:  javac -classpath .:jl1.0.jar MP3.java         (OS X)
