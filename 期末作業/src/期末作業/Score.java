@@ -11,10 +11,18 @@ public class Score {
 		return n;
 	}
 	public void descore(){
-		n -= 1000;
+		n -= 800;
 	}
 	public void escore(){
 		n += 800;
+	}
+	
+	public void lifescore(){
+		n += 400;
+	}
+	
+	public void life2score(){
+		n -= 400;
 	}
 	
 	
