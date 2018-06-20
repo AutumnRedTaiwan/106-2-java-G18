@@ -1,4 +1,4 @@
-package ´Á¥½§@·~;
+package ;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -30,24 +30,24 @@ public class setscreen {
     }
     catch(Exception e)
     {
-            javax.swing.JOptionPane.showMessageDialog(null, "¸ü¤J¹ÏÀÉ¿ù»~: "+Filename);
+            javax.swing.JOptionPane.showMessageDialog(null, "è¼‰å…¥åœ–æª”éŒ¯èª¤: "+Filename);
             image=null;
     }
     /**
-     * «Ø¥ßµøµ¡
+     * å»ºç«‹è¦–çª—
      */
     jf = new JFrame("");
     
     Container cp=jf.getContentPane();
     
-    JButton b1 = new JButton("­n­µ¼Ö");
+    JButton b1 = new JButton("è¦éŸ³æ¨‚");
     b1.setForeground(Color.WHITE);
     b1.setBackground(Color.BLACK);
     b1.setBounds(35,138,150,35);
     cp.add(b1);
     
     
-    JButton b2 = new JButton("¤£­n­µ¼Ö");
+    JButton b2 = new JButton("ä¸è¦éŸ³æ¨‚");
     b2.setForeground(Color.WHITE);
     b2.setBackground(Color.BLACK);
     b2.setBounds(35,219,150,35);
@@ -73,21 +73,21 @@ public class setscreen {
         }
     });
     
-    JLabel music=new JLabel("­µ¼Ö");
+    JLabel music=new JLabel("éŸ³æ¨‚");
     music.setBounds(50,58,75,55);
     cp.add(music);
 
     /**
-     * ³]©w­I´º
+     * è¨­å®šèƒŒæ™¯
      */
     JScrollPane scrollPane = new JScrollPane(new JLabel(new ImageIcon(image)));
     /**
-     * ³]©wµøµ¡¤j¤p
+     * è¨­å®šè¦–çª—å¤§å°
      */
     jf.getContentPane().add(scrollPane);
     jf.pack();
     jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    jf.setTitle("³]©w");
+    jf.setTitle("è¨­å®š");
     jf.setLocationRelativeTo(null);
     jf.setVisible(true);  
 }
